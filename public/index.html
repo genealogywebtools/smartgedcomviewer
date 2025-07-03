@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+	
+<head>
+  	
+	<!-- Caractères et responsive -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!-- Titre court (s'affiche dans les moteurs de recherche) -->
+	<title>Open Source serverless Vanilla JavaScript smart GEDCOM 5.5.1 Parser and Family Tree Viewer</title>
+	
+	<!-- Description de la page (SEO + aperçu sur moteurs de recherche) -->
+	<meta name="description" content="Open source GEDCOM serverless smart parser and family tree viewer written in vanilla JavaScript. Visualize and explore gedcom 5.5.1 genealogy data directly and locally in the browser without frameworks and without HTTP/HTTPS-server." />
+	
+	<!-- Mots-clés pour SEO (facultatif, peu utilisé aujourd’hui) -->
+	<meta name="keywords" content="GEDCOM 5.5.1, genealogy, family tree, vanilla JavaScript, open source, parser, viewer, vanilla JS, HTML, client-side, serverless" />
+	
+	<!-- Auteur -->
+	<meta name="author" content="Jacques Morand / Software Developper" />
+	
+	<!-- Langue du document -->
+	<meta http-equiv="content-language" content="en" />
+	
+	<!-- Robots (SEO) -->
+	<meta name="robots" content="index, follow" />    	
+	    
+    <!-- Open Graph / Facebook / Discord -->
+	<meta property="og:title" content="Open Source serverless smart GEDCOM 5.5.1 Parser and Family Tree Viewer" />
+	<meta property="og:description" content="A smart and lightweight, client-side browser-based GEDCOM viewer written in vanilla JavaScript. No server, no framework, just load your GEDCOM 5.5.1 file and explore with your local browser your family tree." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://yourdomain.com/" />
+	<meta property="og:image" content="https://yourdomain.com/preview.png" /> <!-- Optionnel -->
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Open Source serverless smart GEDCOM 5.5.1 Parser and Family Tree Viewer" />
+	<meta name="twitter:description" content="A smart and lightweight, client-side browser-based GEDCOM viewer written in vanilla JavaScript. No server, no framework, just load your GEDCOM 5.5.1 file and explore with your local browser your family tree." />
+	<meta name="twitter:image" content="https://yourdomain.com/preview.png" />
+	
+	<!-- Source Files to load before html body -->
+	<script src="./gedcomData.js"></script>
+	<script src="./SourceTextFiles.js"></script>
+    <script src="./HelpPageSection.js"></script>
+    <script src="./AboutPageSection.js"></script>
+    
+	<!-- Link Files -->
+	<link rel="stylesheet" href="style.css" />
+  
+</head>
+
+<body>
+	
+	<header>
+		<nav>
+	        <button onclick="showPage('titel-page')">Titre</button>
+	        <button onclick="showPage('tree-page')">Arborescence</button>
+	        <button onclick="showPage('details-page')">Détails</button>
+	        <button onclick="showPage('historic-page')">Historique</button>
+	        <button onclick="showPage('heraldic-page')">Héraldique</button>
+	        <button onclick="showPage('help-page')">Aide</button>
+	        <button onclick="showPage('about-page')">About</button>
+		</nav>
+	</header>
+
+	<main>
+		<!-- Page Titre Généalogie -->
+		<div id="titel-page">
+			<h2>Généalogie des familles Morand du Pâquier</h2>
+			<p>
+				Descendance de Joseph Nicolas MORAND et de Magdalena MORAND née Grandjean.<br>
+				8 générations de 1780 à 2025
+			</p>
+			<img src="./ArmoiriesMorand.png" alt="Armoiries de la famille Morand du Pâquier" class="center-image">
+		</div>
+
+		<!-- Page Arbre Généalogique -->
+		<div id="tree-page">
+			<h2>Arbre généalogique</h2>
+			<div id="familyTreeContainerNew"></div>
+			<div class="no-print">
+				<button onclick="window.print();">Imprimer A4 paysage</button>
+			</div>
+		</div>
+
+		<!-- Page Détails -->
+		<div id="details-page">
+			<h2>Détails de l'individu</h2>
+			<div id="fiche-details"></div>
+			<div class="error" id="error" style="display: none;">
+				Impossible de charger les données pour cet individu.
+			</div>
+		</div>
+		
+		<!-- Page Historique -->
+		<div id="historic-page">
+			<h2>Historique</h2>
+			<div id="historic-page-section"></div>
+		</div>
+
+		<!-- Page Héraldique -->
+		<div id="heraldic-page">
+			<h2>Héraldique</h2>
+			<div id="heraldic-page-section"></div>
+		</div>
+
+		<!-- Page Help -->
+		<div id="help-page">
+			<h2>Guide d'utilisation</h2>
+			<div id="help-page-section"></div>
+		</div>
+
+        <!-- Page About -->
+		<div id="about-page">
+			<h2>About</h2>
+			<div id="about-page-section"></div>
+		</div>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Généalogie des familles Morand du Pâquier - Jacques Morand & Patrice Morand - Tous droits de reproduction réservés.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+
